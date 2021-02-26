@@ -21,8 +21,6 @@ int main(void)
 
       yearlyPop += birthRate - deathRate;
 
-
-
    }
    printf("number of years: %i", years);
 
