@@ -1,0 +1,33 @@
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+   int popStart = get_int("Starting population?");
+
+   int yearlyPop = popStart;
+
+   int popEnd = get_int("End population?");
+
+   int birthRate = popStart/3;
+
+   int deathRate = popStart/4;
+
+   int years = 0;
+
+   while (yearlyPop < popEnd) {
+
+       years++;
+
+      yearlyPop += birthRate - deathRate;
+
+
+
+   }
+   printf("number of years: %i", years);
+
+
+
+
+
+}
