@@ -3,11 +3,22 @@
 
 int main(void)
 {
-   int popStart = get_int("Starting population?");
+
+    int popStart;
+
+    do {
+    popStart = get_int("Starting population? (must be positive and above 9)");
+    }
+    while (popStart < 9);
 
    int yearlyPop = popStart;
 
-   int popEnd = get_int("End population?");
+    int popEnd;
+
+    do {
+    popEnd = get_int("End population?");
+    }
+    while(popEnd<popStart);
 
    int birthRate = popStart/3;
 
@@ -15,17 +26,16 @@ int main(void)
 
    int years = 0;
 
+
+
    while (yearlyPop < popEnd) {
 
        years++;
 
       yearlyPop += birthRate - deathRate;
 
+
+
    }
    printf("number of years: %i", years);
-
-
-
-
-
 }
