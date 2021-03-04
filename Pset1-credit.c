@@ -2,13 +2,13 @@
 #include <cs50.h>
 
 
-int myPowNeg(float x,float n)
+int myPow(int x,int n)
 {
-    float i; /* Variable used in loop counter */
-    float number = 1;
+    int i; /* Variable used in loop counter */
+    int number = 1;
 
-    for (i = 0; i > n; --i)
-        number /= x;
+    for (i = 0; i < n; ++i)
+        number *= x;
 
     return(number);
 }
@@ -23,8 +23,11 @@ int main(void) {
    }
    while(input < -1);
 
-  float inputLength = 0;
 
+
+  int inputLength = 0;
+
+  long inputOld = input;
 
 
    while (input > 0) {
@@ -32,11 +35,25 @@ int main(void) {
     input = input/10;
   }
 
-  printf("%f", inputLength);
+    if (inputLength == 15) {
+
+  int first = (inputOld/(myPow(10,(13))))%10;
+  int second = (inputOld/(myPow(10,(12))))%10;
+
+    if (first == 3) {
+        printf("valid1");
+    }
+
+     printf("%i\n", first);
+      printf("%i\n", second);
 
 
-  float remain = inputLength/myPowNeg(10,-15)%10;
+    }
 
-  printf ("%f", remain);
+  printf("%i\n", inputLength);
+
+  printf("%li\n", inputOld);
+
+
 
 }
