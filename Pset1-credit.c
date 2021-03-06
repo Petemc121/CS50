@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <cs50.h>
 
-
 long myPow(long x,long n)
 {
     int i; /* Variable used in loop counter */
