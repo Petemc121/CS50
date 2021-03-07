@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <cs50.h>
 
+
+
 long myPow(long x,long n)
 {
     int i; /* Variable used in loop counter */
@@ -12,27 +14,31 @@ long myPow(long x,long n)
     return(number);
 }
 
-long checkSum(long num, long numLength) {
+void checkSum(long num, long numLength) {
 
     long evenSum;
     long oddSum;
 
+    long evenDig;
+    long oddDig;
+
+    int i;
+
     for (i=0;i<numLength;i++) {
 
-        long evenDig;
-        long oddDig;
+
 
         if (i % 2 == 0) {
 
-       evenDig = (num / myPow(10, numlength - i))%10;
+       evenDig = (num / myPow(10, numLength - i))%10;
 
-       evenSum += evenDig*2
+       evenSum += evenDig*2;
 
         } else {
 
-            oddDig = (num / myPow(10, numlength - i))%10;
+            oddDig = (num / myPow(10, numLength - i))%10;
 
-            oddSum += oddDig
+            oddSum += oddDig;
 
         }
 
@@ -77,13 +83,12 @@ if (inputLength == 15) {
         printf("valid!\n");
     }
 
-}
-
      printf("%li\n", first);
       printf("%li\n", second);
 
   printf("%li\n", inputOld);
 
+}
 
 
 }
