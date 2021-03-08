@@ -14,36 +14,53 @@ long myPow(long x,long n)
     return(number);
 }
 
-void checkSum(long num, long numLength) {
+long checkSum(long num, long numLength) {
 
-    long evenSum;
-    long oddSum;
+    long evenSum = 0;
+    long oddSum = 0;
 
-    long evenDig;
-    long oddDig;
+    long evenI;
+    long oddI;
 
     int i;
 
     for (i=0;i<numLength;i++) {
 
 
-
         if (i % 2 == 0) {
 
-       evenDig = (num / myPow(10, numLength - i))%10;
+       evenI = (num / myPow(10, i))%10;
 
-       evenSum += evenDig*2;
+       evenSum += evenI;
+
+        printf("even: %li\n", evenI);
 
         } else {
 
-            oddDig = (num / myPow(10, numLength - i))%10;
+            oddI = (num / myPow(10, i))%10;
 
-            oddSum += oddDig;
+            int oddItwo = oddI*2;
+
+            if (oddItwo > 9) {
+
+                int oddItwox = (num / myPow(10, 0))%10;
+                int oddItwoxx = (num / myPow(10, 1))%10;
+
+                oddItwo = oddItwox + oddItwoxx;
+
+            }
+
+            oddSum += odditwo;
+
+             printf("odd: %li\n", oddI);
 
         }
 
 
+
     }
+
+    return evenSum + oddSum;
 
 }
 
@@ -69,8 +86,10 @@ int main(void) {
     input = input/10;
   }
 
- printf("%li\n", inputLength);
+    long check = checkSum(inputOld, inputLength);
 
+ printf("%li\n", inputLength);
+ printf("%li\n", check);
 
 
 if (inputLength == 15) {
@@ -83,12 +102,22 @@ if (inputLength == 15) {
         printf("valid!\n");
     }
 
+
+
+
      printf("%li\n", first);
       printf("%li\n", second);
+
 
   printf("%li\n", inputOld);
 
 }
+
+
+
+
+
+
 
 
 }
