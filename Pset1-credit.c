@@ -43,14 +43,14 @@ long checkSum(long num, long numLength) {
 
             if (oddItwo > 9) {
 
-                int oddItwox = (num / myPow(10, 0))%10;
-                int oddItwoxx = (num / myPow(10, 1))%10;
+                int oddItwox = (oddItwo / myPow(10, 0))%10;
+                int oddItwoxx = (oddItwo / myPow(10, 1))%10;
 
                 oddItwo = oddItwox + oddItwoxx;
-
+ printf("oddITwo: %i\n", oddItwo);
             }
 
-            oddSum += odditwo;
+            oddSum += oddItwo;
 
              printf("odd: %li\n", oddI);
 
