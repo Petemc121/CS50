@@ -61,7 +61,6 @@ long checkSum(long num, long numLength)
 
 }
 
-
 int main(void) {
 
     //get number input.
