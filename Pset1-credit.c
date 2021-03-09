@@ -36,8 +36,6 @@ long checkSum(long num, long numLength)
 
        evenSum += evenI;
 
-
-
         } else {
 
             oddI = (num / myPow(10, i))%10;
