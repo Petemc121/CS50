@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <cs50.h>
 
-
 //power function
 
 long myPow(long x,long n)
