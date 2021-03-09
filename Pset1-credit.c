@@ -40,7 +40,6 @@ long checkSum(long num, long numLength)
 
             oddI = (num / myPow(10, i))%10;
 
-
             int oddItwo = oddI*2;
 
             if (oddItwo > 9) {
