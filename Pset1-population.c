@@ -1,3 +1,5 @@
+// calculates the years it would take for a starting population to reach an end population given a birth rate and a death rate.
+
 #include <cs50.h>
 #include <stdio.h>
 
