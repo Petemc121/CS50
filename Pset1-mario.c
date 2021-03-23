@@ -1,3 +1,5 @@
+// Prints the mario pyramid at an inputted height using the '#' symbol
+
 #include <stdio.h>
 #include <cs50.h>
 
