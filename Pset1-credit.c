@@ -1,3 +1,5 @@
+// this code is designed to validate numerous card numbers including Master card, Visa, American Express and a few more.
+
 #include <stdio.h>
 #include <cs50.h>
 
