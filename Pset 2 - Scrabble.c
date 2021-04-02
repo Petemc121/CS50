@@ -19,7 +19,13 @@ int main(void)
     int score1 = compute_score(word1);
     int score2 = compute_score(word2);
 
-    // TODO: Print the winner
+    if (score1 > score2) {
+        printf("Player 1 wins!");
+    } else if (score2 > score1) {
+        printf("Player 2 wins!");
+    } else {
+           printf("Tie!");
+    }
 }
 
 int compute_score(string word)
@@ -27,35 +33,43 @@ int compute_score(string word)
 
    int totalPoint = 0;
 
+   //loops through each letter in the string, and tests its value using ASCII
+
    for (int i = 0; i < strlen(word); i++)
    {
+
+       //casts an int value onto the char to use ASCII
+
         char letter = word[i];
         int number = (int)word[i];
-         printf ("ascii %i\n", number);
         int point = 0;
 
        if (number > 96 && number < 123 ) {
 
-           int position = number - 96;
+           int position = number - 97;
           point = POINTS[position];
-          printf ("letter lower %i\n", point);
 
        } else
        if (64 < number && number < 91) {
 
-           int position = number - 64;
+           int position = number - 65;
           point = POINTS[position];
-          printf ("letter high %i\n", point);
+
        } else {
-           printf("Please use only letters in the alphabet.");
+         point = 0;
+
        }
+
+       // adds letter value to total word value
 
        totalPoint = totalPoint + point;
 
 
-
    }
 
-   return 1;
+    printf("%s total: %i\n" , word, totalPoint);
+
+   return totalPoint;
+
 
 }
