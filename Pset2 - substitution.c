@@ -2,6 +2,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 
 
@@ -21,32 +22,38 @@ if (strlen(key) != 26)
 } else
 {
   string  plainText = get_string("plaintext: ");
-  string cipher = "";
-
+  int n = strlen(plainText);
+  char *cipher;
+  cipher = (char *) malloc(n);
     for (int i = 0; i< strlen(plainText); i++)
     {
        char letter = plainText[i];
        int ASCII = (int) plainText[i];
        char translation;
+       int position = 0;
+       int keyASCII = 0;
+       int toLowerCase = 0;
 
         if (ASCII > 96 && ASCII < 123) {
-            int position = ASCII - 97;
-           int keyASCII = (int) key[position];
-          int  toLowerCase = keyASCII + 32;
-          translation = (char) toLowerCase;
+           position = ASCII - 97;
+           keyASCII = (int) key[position];
+           toLowerCase = keyASCII + 32;
+          translation =  toLowerCase + 0;
         } else
         if (ASCII > 64 && ASCII < 91) {
-           int position = ASCII - 65;
+         position = ASCII - 65;
            translation = key[position];
 
         } else {
            translation = letter;
         }
-
-        cipher = cipher + translation;
+        printf("translation: %c\n", translation);
+        cipher[i] = translation;
     }
 
-    printf("ciphertext: %s", cipher);
-}
+    // string str = "hello";
+    // strcat(cipher, &str);
 
+    printf("ciphertext: %s", cipher);
+    return 0;
 }
