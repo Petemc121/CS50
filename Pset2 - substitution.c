@@ -4,7 +4,8 @@
 #include <string.h>
 #include <stdlib.h>
 
-
+int validate_key_alphabet(string key);
+ int validate_key_no_repeat(string key);
 
 int main(int argc, string argv[])
 {
@@ -12,15 +13,22 @@ int main(int argc, string argv[])
 
 if (argc == 1)
 {
-    printf("Please input a key\n");
+    printf("Usage: ./substitution key\n");
     return 1;
 } else
 if (strlen(key) != 26)
 {
-    printf("Please input a 26 character key");
+    printf("Please input a 26 character key\n");
+    return 1;
+} else if (validate_key_alphabet(key) == 1) {
+    printf("Please input only alphabetic characters\n");
+    return 1;
+} else if (validate_key_no_repeat(key) == 1) {
+    printf("Please don't repeat characters\n");
     return 1;
 } else
 {
+
   string  plainText = get_string("plaintext: ");
   int n = strlen(plainText);
   char *cipher;
@@ -67,3 +75,40 @@ if (strlen(key) != 26)
 }
 
 }
+
+ int validate_key_alphabet(string key)
+ {
+      for (int j = 0; j < strlen(key); j++)
+      {
+     if ((key[j] > 96 && key[j] < 123 )||( key[j] > 64 && key[j] < 91)) {
+         return 0;
+     } else {
+         return 1;
+     }
+      }
+
+      return 1;
+
+ }
+
+ int validate_key_no_repeat(string key)
+ {
+      for (int v = 0; v < strlen(key); v++)
+      {
+          for (int x = 0; x < strlen(key); x++)
+          {
+             if (x != v) {
+
+             if (key[v] == key[x]) {
+                 return 1;
+             } else {
+                 return 0;
+             }
+
+             }
+
+          }
+
+ }
+ return 1;
+ }
