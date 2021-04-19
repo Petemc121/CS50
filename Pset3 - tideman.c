@@ -261,18 +261,18 @@ int winner;
 void print_winner(void)
 {
 
-   int winnerArray[MAX]
+   int winnerArray[MAX];
 
     for (int i = 0; i < candidate_count; i++)
     {
-            int winNum;
+            int winNum = 0;
 
         for (int j = 0; j < candidate_count; j++)
         {
 
 
            if (locked[i][j] == true) {
-               winNum++
+               winNum++;
            }
 
         }
@@ -282,25 +282,18 @@ void print_winner(void)
     }
 
     int highest;
-    int ties;
+
 
     for (int i = 0; i < candidate_count; i++)
     {
-        if (i = 0) {
+        if (i == 0) {
             highest = winnerArray[i];
         } else if (winnerArray[i] > highest)
         {
-            highest = winnerArray[i]
-        } else if (winnerArray == highest )
-        {
-            ties++
+            highest = winnerArray[i];
         }
     }
 
-
-    if (ties !== 0) {
-        for
-    } else {
 
     for (int i = 0; i < candidate_count; i ++)
     {
@@ -308,7 +301,7 @@ void print_winner(void)
             printf("%s", candidates[i]);
         }
     }
-}
+
 
     return;
 }
