@@ -217,10 +217,22 @@ void sort_pairs(void)
 void lock_pairs(void)
 {
 
+int winner;
 
-                for (int k = 0; k < pair_count-1; k++) {
+                for (int k = 0; k < pair_count; k++) {
+
+
+                if (pairs[k].loser != winner) {
 
            locked[pairs[k].winner][pairs[k].loser] = true;
+
+                }
+
+            if (k == 0)
+            {
+                winner = pairs[k].winner;
+            }
+
 
         }
 
@@ -248,7 +260,56 @@ void lock_pairs(void)
 // Print the winner of the election
 void print_winner(void)
 {
-    // TODO
+
+   int winnerArray[MAX]
+
+    for (int i = 0; i < candidate_count; i++)
+    {
+            int winNum;
+
+        for (int j = 0; j < candidate_count; j++)
+        {
+
+
+           if (locked[i][j] == true) {
+               winNum++
+           }
+
+        }
+
+        winnerArray[i] = winNum;
+
+    }
+
+    int highest;
+    int ties;
+
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (i = 0) {
+            highest = winnerArray[i];
+        } else if (winnerArray[i] > highest)
+        {
+            highest = winnerArray[i]
+        } else if (winnerArray == highest )
+        {
+            ties++
+        }
+    }
+
+
+    if (ties !== 0) {
+        for
+    } else {
+
+    for (int i = 0; i < candidate_count; i ++)
+    {
+        if (winnerArray[i] == highest) {
+            printf("%s", candidates[i]);
+        }
+    }
+}
+
     return;
 }
 
